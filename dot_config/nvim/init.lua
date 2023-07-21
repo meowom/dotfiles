@@ -192,7 +192,21 @@ require('lazy').setup({
   },
 
   {
+    -- Theme inspired by Atom
+    'ojroques/nvim-osc52',
+    config = function()
+      require("osc52").setup()
+      vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
+      vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
+      vim.keymap.set('v', '<leader>c', require('osc52').copy_visual)
+    end,
+  },
+
+  {
     "nvim-neo-tree/neo-tree.nvim",
+    keys = {
+      { "<leader>ft", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+    },
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
