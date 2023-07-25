@@ -73,6 +73,11 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- Adds various text objects to give you more targets to operate on
+  'wellle/targets.vim',
+  -- Defines a new text object, based on indentation levels
+  'michaeljsmith/vim-indent-object',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
