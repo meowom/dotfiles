@@ -285,6 +285,8 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- TODO https://www.reddit.com/r/neovim/comments/10q2mjq/i_dont_really_get_folding
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
