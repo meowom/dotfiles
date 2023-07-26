@@ -99,6 +99,38 @@ require('lazy').setup({
     },
   },
 
+  {
+      "jackMort/ChatGPT.nvim",
+        event = "VeryLazy",
+        config = function()
+          require("chatgpt").setup({
+            popup_input = {
+              submit = "<CR>"
+            }
+          })
+          local chatgpt = require('chatgpt')
+          require('which-key').register({
+              p = {
+                  name = "ChatGPT",
+                  e = {
+                      function()
+                          chatgpt.edit_with_instructions()
+                      end,
+                      "Edit with instructions",
+                  },
+              },
+          }, {
+              prefix = "<leader>",
+              mode = "v",
+          })
+        end,
+        dependencies = {
+          "MunifTanjim/nui.nvim",
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim"
+        }
+  },
+
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   {
@@ -190,9 +222,6 @@ require('lazy').setup({
     'ojroques/nvim-osc52',
     config = function()
       require("osc52").setup()
-      vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
-      vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
-      vim.keymap.set('v', '<leader>c', require('osc52').copy_visual)
     end,
   },
 
@@ -225,24 +254,6 @@ require('lazy').setup({
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) functions
   },
-
-  -- Lazy
-  {
-    "jackMort/ChatGPT.nvim",
-      event = "VeryLazy",
-      config = function()
-        require("chatgpt").setup({
-          popup_input = {
-            submit = "<CR>"
-          }
-        })
-      end,
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim"
-      }
-  }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -325,6 +336,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- To automatically copy text that was yanked into register +
+local function copy_from_register()
+  if vim.v.event.operator == 'y' and vim.v.event.regname == '+' then
+    require('osc52').copy_register('+')
+  end
+end
+vim.api.nvim_create_autocmd('TextYankPost', {callback = copy_from_register})
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
