@@ -1,39 +1,6 @@
 ---@diagnostic disable: missing-fields
 --[[
 
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-
-Kickstart.nvim is *not* a distribution.
-
-Kickstart.nvim is a template for your own configuration.
-  The goal is that you can read every line of code, top-to-bottom, understand
-  what your configuration is doing, and modify it to suit your needs.
-
-  Once you've done that, you should start exploring, configuring and tinkering to
-  explore Neovim!
-
-  If you don't know anything about Lua, I recommend taking some time to read through
-  a guide. One possible example:
-  - https://learnxinyminutes.com/docs/lua/
-
-  And then you can explore or search through `:help lua-guide`
-
-
-Kickstart Guide:
-
-I have left several `:help X` comments throughout the init.lua
-You should run that command and read that help section for more information.
-
-In addition, I have some `NOTE:` items throughout the file.
-These are for you, the reader to help understand what is happening. Feel free to delete
-them once you know what you're doing, but they should serve as a guide for when you
-are first encountering a few different constructs in your nvim config.
-
-I hope you enjoy your Neovim journey,
-- TJ
-
 P.S. You can delete this when you're done too. It's your config now :)
 --]]
 -- Set <space> as the leader key
@@ -41,6 +8,23 @@ P.S. You can delete this when you're done too. It's your config now :)
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.vindent_motion_OO_prev = '[l'
+vim.g.vindent_motion_OO_next = ']l'
+vim.g.vindent_motion_less_prev = '[-'
+vim.g.vindent_motion_less_next = ']-'
+vim.g.vindent_motion_more_prev = '[='
+vim.g.vindent_motion_more_next = ']='
+vim.g.vindent_motion_XX_ss = '[p'
+vim.g.vindent_motion_XX_se = ']p'
+vim.g.vindent_motion_OX_ss = '[P'
+vim.g.vindent_motion_OX_se = ']P'
+vim.g.vindent_object_OO_ii = 'iI'
+vim.g.vindent_object_XX_ii = 'ii'
+vim.g.vindent_object_XX_ai = 'ai'
+vim.g.vindent_object_XX_aI = 'aI'
+vim.g.vindent_jumps = 1
+-- vim.g.vindent_count = 0
+-- vim.g.vindent_begin = 0
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -57,6 +41,7 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 vim.opt.rtp:prepend(lazypath)
+
 
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
@@ -76,7 +61,8 @@ require('lazy').setup({
   -- Adds various text objects to give you more targets to operate on
   'wellle/targets.vim',
   -- Defines a new text object, based on indentation levels
-  'michaeljsmith/vim-indent-object',
+  -- 'michaeljsmith/vim-indent-object',
+  'jessekelighine/vindent.vim',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -177,7 +163,6 @@ require('lazy').setup({
     branch = '0.1.x', 
     dependencies = { 
       'nvim-lua/plenary.nvim',
-      'debugloop/telescope-undo.nvim',
     }
   },
 
@@ -336,7 +321,6 @@ require('telescope').setup {
 
 -- Enable telescope fzf native, if installed
 require('telescope').load_extension('fzf')
-require('telescope').load_extension('undo')
 -- pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
