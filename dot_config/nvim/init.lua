@@ -106,22 +106,8 @@ require('lazy').setup({
           require("chatgpt").setup({
             popup_input = {
               submit = "<CR>"
-            }
-          })
-          local chatgpt = require('chatgpt')
-          require('which-key').register({
-              p = {
-                  name = "ChatGPT",
-                  e = {
-                      function()
-                          chatgpt.edit_with_instructions()
-                      end,
-                      "Edit with instructions",
-                  },
-              },
-          }, {
-              prefix = "<leader>",
-              mode = "v",
+            },
+            actions_paths = {'~/.config/nvim/chatgpt-actions.json'},
           })
         end,
         dependencies = {
