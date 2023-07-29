@@ -147,6 +147,17 @@
       }
     }
   },
+
+  "english_editor": {
+    "type": "chat",
+    "opts": {
+      "template": "Summarize the following text.\n\nText:\n\"\"\"\n{{input}}\n\"\"\"\n\nSummary:",
+      "strategy": "edit",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    }
+  },
   "code_readability_analysis": {
     "type": "chat",
     "opts": {
