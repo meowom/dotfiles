@@ -202,7 +202,10 @@ require('lazy').setup({
       -- See `:help nvim-treesitter`
       require('nvim-treesitter.configs').setup {
         -- Add languages to be installed here that you want installed for treesitter
-        ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+        ensure_installed = {
+          'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript',
+          'vimdoc', 'vim', 'json', 'html', 'yaml'
+        },
 
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
         auto_install = false,
@@ -323,6 +326,10 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldenable = false
 
 -- TODO https://www.reddit.com/r/neovim/comments/10q2mjq/i_dont_really_get_folding
 
