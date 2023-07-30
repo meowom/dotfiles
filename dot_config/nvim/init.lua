@@ -268,6 +268,23 @@ require('lazy').setup({
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) functions
   },
+
+  {
+    "gelguy/wilder.nvim",
+    config = function()
+      local wilder = require('wilder')
+      wilder.set_option('renderer', wilder.popupmenu_renderer(
+      wilder.popupmenu_border_theme({
+        highlighter = wilder.basic_highlighter(),
+        min_width = '100%', -- minimum height of the popupmenu, can also be a number
+        min_height = '50%', -- to set a fixed height, set max_height to the same value
+        reverse = 0,        -- if 1, shows the candidates from bottom to top
+      }),
+      wilder.setup({modes = {':', '/', '?'}})
+))
+    end
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.

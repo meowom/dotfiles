@@ -1,13 +1,22 @@
 {
-  "hello": {
+  "english_editor": {
     "type": "chat",
     "opts": {
-      "template": "Complete the following code written in {{lang}} by pasting the existing code and continuing it.\n\nExisting code:\n```{{filetype}}\n{{input}}\n```\n\n```{{filetype}}\n",
-      "strategy": "replace",
+      "title": "english_editor",
+      "strategy": "display",
+      "template": "{{input}}",
       "params": {
         "model": "gpt-3.5-turbo",
-        "stop": [
-          "```"
+        "max_tokens": 1024,
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2021-09\nCurrent data: 2023-07-30"
+          },
+          {
+            "role": "user",
+            "content": "I want you to act as an English editor, meticulously reviewing my written text and pointing out any mistakes or areas that need improvement. Please analyze the grammar, punctuation, sentence structure, and overall language accuracy. Your detailed feedback will help me understand my errors and learn from them."
+          }
         ]
       }
     }
