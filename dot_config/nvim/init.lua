@@ -92,6 +92,8 @@ require('lazy').setup({
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
+
+      'hrsh7th/cmp-cmdline',
     },
   },
 
@@ -269,22 +271,6 @@ require('lazy').setup({
     opts = {} -- this is equalent to setup({}) functions
   },
 
-  {
-    "gelguy/wilder.nvim",
-    config = function()
-      local wilder = require('wilder')
-      wilder.set_option('renderer', wilder.popupmenu_renderer(
-      wilder.popupmenu_border_theme({
-        highlighter = wilder.basic_highlighter(),
-        min_width = '100%', -- minimum height of the popupmenu, can also be a number
-        min_height = '50%', -- to set a fixed height, set max_height to the same value
-        reverse = 0,        -- if 1, shows the candidates from bottom to top
-      }),
-      wilder.setup({modes = {':', '/', '?'}})
-))
-    end
-  },
-
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -347,6 +333,9 @@ vim.o.termguicolors = true
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false
+
+vim.o.spelllang = 'en_us'
+vim.o.spell = true
 
 -- TODO https://www.reddit.com/r/neovim/comments/10q2mjq/i_dont_really_get_folding
 
@@ -551,5 +540,14 @@ cmp.setup {
   },
 }
 
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

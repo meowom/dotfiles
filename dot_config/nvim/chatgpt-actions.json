@@ -1,8 +1,8 @@
 {
-  "english_editor": {
+  "proofread": {
     "type": "chat",
     "opts": {
-      "title": "english_editor",
+      "title": "proofread",
       "strategy": "display",
       "template": "{{input}}",
       "params": {
@@ -11,11 +11,25 @@
         "messages": [
           {
             "role": "system",
-            "content": "You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2021-09\nCurrent data: 2023-07-30"
-          },
+            "content": "You will be provided with statements, and your task is to provide some suggestions, including suggestions to improve the accuracy and fluency of English expression."
+          }
+        ]
+      }
+    }
+  },
+  "translate_or_explain": {
+    "type": "chat",
+    "opts": {
+      "title": "translate_or_explainnn",
+      "strategy": "display",
+      "template": "{{input}}",
+      "params": {
+        "model": "gpt-3.5-turbo",
+        "max_tokens": 1024,
+        "messages": [
           {
-            "role": "user",
-            "content": "I want you to act as an English editor, meticulously reviewing my written text and pointing out any mistakes or areas that need improvement. Please analyze the grammar, punctuation, sentence structure, and overall language accuracy. Your detailed feedback will help me understand my errors and learn from them."
+            "role": "system",
+            "content": "You will receive sentences in either Chinese or English. If the sentence is in Chinese, translate it directly into standard English. If the sentence is in English, explain it using simple English that can be easily understood"
           }
         ]
       }
