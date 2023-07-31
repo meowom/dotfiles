@@ -221,7 +221,7 @@ require('lazy').setup({
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
         auto_install = false,
 
-        -- highlight = { enable = true },
+        highlight = { enable = true },
         indent = { enable = true },
         incremental_selection = {
           enable = true,
