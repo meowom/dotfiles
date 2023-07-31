@@ -17,22 +17,24 @@
       }
     }
   },
-  "translate_or_explain": {
+  "simplify": {
     "type": "chat",
     "opts": {
-      "title": "translate_or_explainnn",
+      "title": "simplify",
       "strategy": "display",
       "template": "{{input}}",
       "params": {
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-3.5-turbo-0613",
         "max_tokens": 1024,
+        "temperature": 1,
         "messages": [
           {
             "role": "system",
-            "content": "You will receive sentences in either Chinese or English. If the sentence is in Chinese, translate it directly into standard English. If the sentence is in English, explain it using simple English that can be easily understood"
+            "content": "You will be provided with statements, And your task is to guide a beginner student through understanding a simple statement. Assume the student is at A0 level (beginner level) in language proficiency"
           }
         ]
       }
     }
   }
+
 }
