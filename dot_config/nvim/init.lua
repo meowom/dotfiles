@@ -137,21 +137,12 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   -- Theme inspired by Atom
-  --   'projekt0n/github-nvim-theme',
-  --   priority = 1000,
-  --   config = function()
-  --     -- vim.cmd.colorscheme 'github_dark'
-  --   end,
-  -- },
-
   {
     -- Theme inspired by Atom
-    'yazeed1s/minimal.nvim',
+    'projekt0n/github-nvim-theme',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'minimal-base16'
+      vim.cmd.colorscheme 'github_dark'
     end,
   },
 
@@ -337,7 +328,7 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = false
+vim.o.termguicolors = true
 
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
