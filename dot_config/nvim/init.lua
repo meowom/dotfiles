@@ -137,12 +137,21 @@ require('lazy').setup({
     },
   },
 
+  -- {
+  --   -- Theme inspired by Atom
+  --   'projekt0n/github-nvim-theme',
+  --   priority = 1000,
+  --   config = function()
+  --     -- vim.cmd.colorscheme 'github_dark'
+  --   end,
+  -- },
+
   {
     -- Theme inspired by Atom
-    'projekt0n/github-nvim-theme',
+    'yazeed1s/minimal.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'github_dark'
+      vim.cmd.colorscheme 'minimal-base16'
     end,
   },
 
@@ -159,18 +168,18 @@ require('lazy').setup({
       },
     },
   },
-
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
-  },
-
+  --
+  -- {
+  --   -- Add indentation guides even on blank lines
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   -- Enable `lukas-reineke/indent-blankline.nvim`
+  --   -- See `:help indent_blankline.txt`
+  --   opts = {
+  --     char = '┊',
+  --     show_trailing_blankline_indent = false,
+  --   },
+  -- },
+  --
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
@@ -212,7 +221,7 @@ require('lazy').setup({
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
         auto_install = false,
 
-        highlight = { enable = true },
+        -- highlight = { enable = true },
         indent = { enable = true },
         incremental_selection = {
           enable = true,
@@ -328,14 +337,14 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+vim.o.termguicolors = false
 
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false
 
-vim.o.spelllang = 'en_us'
-vim.o.spell = true
+-- vim.o.spelllang = 'en_us'
+-- vim.o.spell = true
 
 -- TODO https://www.reddit.com/r/neovim/comments/10q2mjq/i_dont_really_get_folding
 
