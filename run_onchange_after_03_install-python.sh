@@ -1,4 +1,9 @@
 #!/bin/zsh
+# Check if Pyenv is already installed
+if command -v pyenv >/dev/null 2>&1; then
+  echo "Pyenv is already installed. Skipping installation."
+  exit 0
+fi
 # Check the operating system
 echo "Installing Pyenv..."
 if [[ "$OSTYPE" == "darwin"* ]]; then
