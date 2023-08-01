@@ -1,14 +1,15 @@
+
+# Run Zellij with a specific layout
 zellij_with_layout() {
     zellij --layout "$@"
 }
 compdef '_files -W ~/.config/zellij/layouts -/' zellij_with_layout
 alias zjl='zellij_with_layout'
 
-
-_zellij_sessions_completion() {
+# Attach to an existing Zellij session
+_zellij_attach() {
   local sessions
-  sessions=$(zellij list-sessions | awk '{print $1}')
-  COMPREPLY=($(compgen -W "$sessions" -- "${COMP_WORDS[COMP_CWORD]}"))
+  sessions=($(zellij list-sessions | grep -oE '^\S+'))
+  _describe 'values' sessions
 }
-alias zja='zellij attach'
-complete -F _zellij_sessions_completion zja
+compdef _zellij_attach zja
