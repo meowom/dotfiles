@@ -1,9 +1,0 @@
-#!/bin/sh
-{{ if eq .chezmoi.os "darwin" }}
-# macOS-specific code
-brew install neovim zellij chezmoi gh tree
-{{ else if eq .chezmoi.osRelease.id "arch" }}
-# arcLinux-specific code
-# sudo pacman -S base linux linux-firmware openssh sudo dhcpcd
-sudo pacman -S zellij neovim zsh chezmoi git github-cli man-db man-pages base-devel tree
-{{ end }}
