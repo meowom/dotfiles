@@ -49,6 +49,18 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
+    tab name="Chezmoi" {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane {
+            command "nvim"
+            cwd "~/.local/share/chezmoi"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
 }
 keybinds {
     shared {
