@@ -102,6 +102,35 @@ require('lazy').setup({
         event = "VeryLazy",
         config = function()
           require("chatgpt").setup({
+            -- edit_with_instructions = {
+            --   keymaps = {
+            --     close = "<C-c>",
+            --     accept = "<C-y>",
+            --     toggle_diff = "<C-d>",
+            --     toggle_settings = "<C-o>",
+            --     cycle_windows = "<Tab>",
+            --     use_output_as_input = "<C-i>",
+            --   },
+            -- },
+            chat = {
+              keymaps = {
+                close = { "<C-c>","<C-e>" },
+                yank_last = "<C-y>",
+                yank_last_code = "<C-k>",
+                scroll_up = "<C-u>",
+                scroll_down = "<C-d>",
+                new_session = "<C-n>",
+                cycle_windows = "<Tab>",
+                cycle_modes = "<C-f>",
+                select_session = "<Space>",
+                rename_session = "r",
+                delete_session = "d",
+                draft_message = "<C-d>",
+                toggle_settings = "<C-o>",
+                toggle_message_role = "<C-r>",
+                toggle_system_role_open = "<C-s>",
+              },
+            },
             popup_input = {
               submit = "<CR>"
             },
@@ -270,6 +299,15 @@ require('lazy').setup({
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) functions
   },
+
+  {
+    'Wansmer/treesj',
+    keys = { '<space>m', '<space>j', '<space>s' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup({--[[ your config ]]})
+    end,
+  }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
