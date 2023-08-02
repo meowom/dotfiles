@@ -20,10 +20,11 @@ clone_or_pull_repository() {
   fi
 }
 
-# Check if .private-setup exists, and if not, clone the repository
-if ! file_exists .private-setup; then
-  clone_or_pull_repository
-fi
+# Change to the ~/.local/share/chezmoi directory
+cd ~/.local/share/chezmoi
+
+# Clone or pull the repository
+clone_or_pull_repository
 
 # Run .private-setup/init.zsh if it exists
 if file_exists .private-setup/init.zsh; then
