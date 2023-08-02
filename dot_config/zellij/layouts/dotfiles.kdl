@@ -1,11 +1,11 @@
 layout {
-    tab name="Note" {
+    tab name="Note" focus=true {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
         pane {
-            command "git"
-            args: "pull"
+            command "nvim"
+            args "todo.md"
             cwd "~/projects/xvx/notes"
         }
         pane size=1 borderless=true {
@@ -30,6 +30,7 @@ layout {
             plugin location="zellij:tab-bar"
         }
         pane {
+            command "nvim"
             cwd "~/.oh-my-zsh/custom"
         }
         pane size=1 borderless=true {
@@ -41,10 +42,18 @@ layout {
             plugin location="zellij:tab-bar"
         }
         pane {
+            command "nvim"
             cwd "~/.config"
         }
         pane size=1 borderless=true {
             plugin location="zellij:status-bar"
         }
+    }
+}
+keybinds {
+    shared {
+        bind "Alt 1" { Run "git" "status"; }
+        bind "Alt 2" { Run "git" "diff"; }
+        bind "Alt 3" { Run "exa" "--color" "always"; }
     }
 }
