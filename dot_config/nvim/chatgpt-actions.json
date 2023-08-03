@@ -4,34 +4,15 @@
     "opts": {
       "title": "proofread",
       "strategy": "display",
-      "template": "{{input}}",
+      "template": "`{{input}}`",
       "params": {
-        "model": "gpt-3.5-turbo",
-        "temperature": 0.7,
-        "max_tokens": 1024,
+        "model": "gpt-3.5-turbo-0613",
+        "temperature": 0,
+        "max_tokens": 3000,
         "messages": [
           {
             "role": "system",
-            "content": "You will be provided with statements, and your task is to provide some suggestions, including suggestions to improve the accuracy and fluency of English expression."
-          }
-        ]
-      }
-    }
-  },
-  "proofread_plus": {
-    "type": "chat",
-    "opts": {
-      "title": "proofread",
-      "strategy": "display",
-      "template": "{{input}}",
-      "params": {
-        "model": "gpt-3.5-turbo",
-        "temperature": 0.7,
-        "max_tokens": 1024,
-        "messages": [
-          {
-            "role": "system",
-            "content": " You will be provided with texts, and I would task is to review them for any spelling, grammar, or punctuation errors. Once you have finished reviewing the text, provide me with any necessary corrections or suggestions for improve the text."
+            "content": "You will act an English teacher and provide suggestions for improving sentence structure, clarity, and overall writing style of each of my sentences"
           }
         ]
       }
@@ -42,10 +23,10 @@
     "opts": {
       "title": "comment",
       "strategy": "display",
-      "template": "{{input}}",
+      "template": "'{{input}}'",
       "params": {
         "model": "gpt-3.5-turbo",
-        "max_tokens": 1024,
+        "max_tokens": 3000,
         "temperature": 0.3,
         "messages": [
           {
@@ -56,15 +37,53 @@
       }
     }
   },
+  "analyze_grammatical": {
+    "type": "chat",
+    "opts": {
+      "title": "analyze_grammatical",
+      "strategy": "display",
+      "template": "`{{input}}`",
+      "params": {
+        "model": "gpt-3.5-turbo-0613",
+        "max_tokens": 3000,
+        "temperature": 0.3,
+        "messages": [
+          {
+            "role": "system",
+            "content": "You will act an English teacher and analyze the grammatical details of each of my sentences"
+          }
+        ]
+      }
+    }
+  },
+  "etymologist": {
+    "type": "chat",
+    "opts": {
+      "title": "analyze_grammatical",
+      "strategy": "display",
+      "template": "`{{input}}`",
+      "params": {
+        "model": "gpt-3.5-turbo-0613",
+        "max_tokens": 3000,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "system",
+            "content": "I want you to act as a etymologist. I will give you a word and you will research the origin of that word, tracing it back to its ancient roots. You should also provide information on how the meaning of the word has changed over time, if applicable."
+          }
+        ]
+      }
+    }
+  },
   "simplify": {
     "type": "chat",
     "opts": {
       "title": "simplify",
       "strategy": "display",
-      "template": "{{input}}",
+      "template": "`{{input}}`",
       "params": {
         "model": "gpt-3.5-turbo-0613",
-        "max_tokens": 1024,
+        "max_tokens": 3000,
         "temperature": 0.7,
         "messages": [
           {

@@ -26,7 +26,6 @@ cd ~/.local/share/chezmoi
 # Clone or pull the repository
 clone_or_pull_repository
 
-cd ~/.local/share/chezmoi
 # Run .private-setup/init.zsh if it exists
 if file_exists .private-setup/init.zsh; then
   source .private-setup/init.zsh
