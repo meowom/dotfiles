@@ -1,15 +1,4 @@
 layout {
-    tab name="Note" focus=true {
-        pane size=1 borderless=true {
-            plugin location="zellij:tab-bar"
-        }
-        pane {
-            cwd "~/projects/xvx/notes"
-        }
-        pane size=1 borderless=true {
-            plugin location="zellij:status-bar"
-        }
-    }
     tab name="Neovim" {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"

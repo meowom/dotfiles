@@ -27,10 +27,10 @@ cd ~/.local/share/chezmoi
 clone_or_pull_repository
 
 # Run .private-setup/init.zsh if it exists
-if file_exists .private-setup/init.zsh; then
-  source .private-setup/init.zsh
-else
-  echo "Error: .private-setup/init.zsh not found."
-  exit 1
-fi
+# if file_exists .private-setup/init.zsh; then
+#   source .private-setup/init.zsh
+# else
+#   echo "Error: .private-setup/init.zsh not found."
+#   exit 1
+# fi
 

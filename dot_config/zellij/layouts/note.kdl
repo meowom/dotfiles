@@ -1,0 +1,14 @@
+layout {
+    tab name="Notes" {
+        pane {
+            cwd "~/projects/xvx/notes"
+        }
+    }
+}
+keybinds {
+    shared {
+        bind "Alt 1" { Run "git" "status"; }
+        bind "Alt 2" { Run "git" "diff"; }
+        bind "Alt 3" { Run "exa" "--color" "always"; }
+    }
+}
