@@ -1,4 +1,3 @@
-
 # Attach to an existing Zellij session
 _zellij_attach() {
   local sessions
@@ -10,12 +9,6 @@ zellij_with_attach() {
 }
 compdef _zellij_attach zellij_with_attach
 alias zja='zellij_with_attach'
-
-
-# _zellij_sessions_completion() {
-#   reply=($(zellij list-sessions | grep -o '^[^\t ]*'))
-# }
-# compctl -K _zellij_sessions_completion zellij attach
 
 # Run Zellij with a specific layout
 zellij_with_layout() {
