@@ -112,25 +112,25 @@ require('lazy').setup({
             --     use_output_as_input = "<C-i>",
             --   },
             -- },
-            chat = {
-              keymaps = {
-                close = { "<C-c>","<C-e>" },
-                yank_last = "<C-y>",
-                yank_last_code = "<C-k>",
-                scroll_up = "<C-u>",
-                scroll_down = "<C-d>",
-                new_session = "<C-n>",
-                cycle_windows = "<Tab>",
-                cycle_modes = "<C-f>",
-                select_session = "<Space>",
-                rename_session = "r",
-                delete_session = "d",
-                draft_message = "<C-d>",
-                toggle_settings = "<C-o>",
-                toggle_message_role = "<C-r>",
-                toggle_system_role_open = "<C-s>",
-              },
-            },
+            -- chat = {
+            --   keymaps = {
+            --     close = { "<C-c>","<C-e>" },
+            --     yank_last = "<C-y>",
+            --     yank_last_code = "<C-k>",
+            --     scroll_up = "<C-u>",
+            --     scroll_down = "<C-d>",
+            --     new_session = "<C-n>",
+            --     cycle_windows = "<Tab>",
+            --     cycle_modes = "<C-f>",
+            --     select_session = "<Space>",
+            --     rename_session = "r",
+            --     delete_session = "d",
+            --     draft_message = "<C-d>",
+            --     toggle_settings = "<C-o>",
+            --     toggle_message_role = "<C-r>",
+            --     toggle_system_role_open = "<C-s>",
+            --   },
+            -- },
             popup_input = {
               submit = "<CR>"
             },
@@ -387,13 +387,14 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Remap c to use the "black hole" register
-vim.api.nvim_set_keymap('n', 'c', '"_c', { noremap = true })
--- Remap x to use the "black hole" register
-vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true })
-
--- vim.keymap.set("n", "c", "_c", opts)
--- vim.keymap.set("n", "x", "_x", { noremap = true, silent = true })
+vim.keymap.set('v', '<Leader>jt', ':ChatGPTRun translate<CR>', { noremap = true })
+vim.keymap.set('v', '<Leader>je', ':ChatGPTRun explain_code<CR>', { noremap = true })
+vim.keymap.set('v', '<Leader>jg', ':ChatGPTRun grammar_correction<CR>', { noremap = true })
+vim.keymap.set('v', '<Leader>jf', ':ChatGPTRun fix_bugs<CR>', { noremap = true })
+vim.keymap.set('v', '<Leader>ja', ':ChatGPTRun analyze_grammtical<CR>', { noremap = true })
+vim.keymap.set('v', '<Leader>jc', ':ChatGPTRun complete_code<CR>', { noremap = true })
+vim.keymap.set('v', '<Leader>jw', ':ChatGPTRun word_etymology<CR>', { noremap = true })
+vim.keymap.set('v', '<Leader>js', ':ChatGPTRun summarize<CR>', { noremap = true })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
