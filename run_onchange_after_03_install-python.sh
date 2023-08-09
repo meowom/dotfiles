@@ -26,4 +26,3 @@ echo "Installing Python..."
 pyenv install 3.9.6  # Replace with your desired Python version
 pyenv global 3.9.6    # Set the installed Python version as the global default
 echo "Pyenv and Python installation completed!"
-

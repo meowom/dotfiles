@@ -1,23 +1,4 @@
 {
-  "proofread": {
-    "type": "chat",
-    "opts": {
-      "title": "proofread",
-      "strategy": "display",
-      "template": "`{{input}}`",
-      "params": {
-        "model": "gpt-3.5-turbo-0613",
-        "temperature": 0.5,
-        "max_tokens": 3000,
-        "messages": [
-          {
-            "role": "system",
-            "content": "You will act an English teacher and provide suggestions for improving sentence structure, clarity, and overall writing style of each of my sentences"
-          }
-        ]
-      }
-    }
-  },
   "comment": {
     "type": "chat",
     "opts": {
@@ -70,45 +51,6 @@
           {
             "role": "system",
             "content": "I want you to act as a etymologist. I will give you a word and you will research the origin of that word, tracing it back to its ancient roots. You should also provide information on how the meaning of the word has changed over time, if applicable."
-          }
-        ]
-      }
-    }
-  },
-  "generate_command": {
-    "type": "chat",
-    "opts": {
-      "title": "generate_command",
-      "strategy": "replace",
-      "template": "{{input}}",
-      "params": {
-        "model": "gpt-3.5-turbo-0613",
-        "max_tokens": 1000,
-        "temperature": 0,
-        "messages": [
-          {
-            "role": "system",
-            "content": "You will be provided with instructions, your task is to provide functioning shell commands. Return a CLI command and nothing else.The CLI command must work for macOS"
-          }
-        ]
-
-      }
-    }
-  },
-  "simplify": {
-    "type": "chat",
-    "opts": {
-      "title": "simplify",
-      "strategy": "display",
-      "template": "`{{input}}`",
-      "params": {
-        "model": "gpt-3.5-turbo-0613",
-        "max_tokens": 3000,
-        "temperature": 0.7,
-        "messages": [
-          {
-            "role": "system",
-            "content": "You will be provided with statements, And your task is to guide a beginner student through understanding a simple statement. Assume the student is at A0 level (beginner level) in language proficiency"
           }
         ]
       }
