@@ -8,3 +8,5 @@ alias cms='chezmoi status'
 # alias cmaa = 'chezmoi add *'
 
 alias vi="nvim"
+
+
