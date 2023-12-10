@@ -17,22 +17,6 @@ else
   exit 1
 fi
 
-# Set up shell environment for Pyenv
-if ! grep -Fxq 'export PYENV_ROOT="$HOME/.pyenv"' ~/.zshrc; then
-  echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-fi
-
-if ! grep -Fxq 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' ~/.zshrc; then
-  echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-fi
-
-if ! grep -Fxq 'eval "$(pyenv init -)"' ~/.zshrc; then
-  echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-fi
-# Set up shell environment for Pyenv
-# echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-# echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-# echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 source ~/.zshrc
 
 echo "Installing Python..."
