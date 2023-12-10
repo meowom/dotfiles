@@ -26,7 +26,6 @@ common_packages=(
 
     # Terminal Productivity and Utilities
     "tealdeer"      # Very fast implementation of 'tldr' (simplified, community-driven man pages)
-    "zellij"        # Terminal workspace with features like panes and tabs
 
     # Version Control
     "git"           # Distributed version control system for tracking changes in source code
@@ -49,7 +48,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	# macOS: Installation using Homebrew
 	install_brew_packages ${common_packages[@]}
 	# GUI (specific to macOS)
-  brew install gh
+  brew install gh zellij
 	brew install --cask alacritty
   brew autoremove
 elif [[ -f "/etc/arch-release" ]]; then
