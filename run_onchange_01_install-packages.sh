@@ -27,6 +27,7 @@ common_packages=(
 
     # Terminal Productivity and Utilities
     "tealdeer"      # Very fast implementation of 'tldr' (simplified, community-driven man pages)
+    "zellij"        # Terminal workspace
 
     # Version Control
     "git"           # Distributed version control system for tracking changes in source code
@@ -36,7 +37,6 @@ common_packages=(
 # macOS-specific software packages
 macos_packages=(
     "gh"            # GitHub CLI
-    "zellij"        # Terminal workspace
     "iproute2mac"   # Networking utilities tailored for macOS
 )
 
