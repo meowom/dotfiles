@@ -16,3 +16,21 @@ if [ ! -d "$P10K_DIR" ]; then
 else
 	echo "Powerlevel10k already installed."
 fi
+
+# # Install fzf-tab
+FZF_TAB_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fzf-tab"
+if [ ! -d "$FZF_TAB_DIR" ]; then
+    echo "Installing fzf-tab..."
+    git clone https://github.com/Aloxaf/fzf-tab "$FZF_TAB_DIR"
+else
+    echo "fzf-tab already installed."
+fi
+
+# # Install zsh-autosuggestions
+ZSH_AUTOSUGGESTIONS_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+if [ ! -d "$ZSH_AUTOSUGGESTIONS_DIR" ]; then
+    echo "Installing zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_AUTOSUGGESTIONS_DIR"
+else
+    echo "zsh-autosuggestions already installed."
+fi
