@@ -58,7 +58,7 @@ install_brew_packages() {
 
 # Function to install packages using Pacman
 install_pacman_packages() {
-	sudo pacman -Syu $@
+	sudo pacman -Sy $@
 }
 
 # Check the operating system

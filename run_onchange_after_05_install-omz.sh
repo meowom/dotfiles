@@ -8,6 +8,8 @@ else
 	echo "Oh My Zsh already installed."
 fi
 
+source ~/.zshrc
+
 # Check if Powerlevel10k is already installed
 P10K_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 if [ ! -d "$P10K_DIR" ]; then
