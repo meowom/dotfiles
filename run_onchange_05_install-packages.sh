@@ -33,6 +33,23 @@ common_packages=(
     "lazygit"       # Simple terminal UI for git commands
 )
 
+# macOS-specific software packages
+macos_packages=(
+    "gh"            # GitHub CLI
+    "zellij"        # Terminal workspace
+    "iproute2mac"   # Networking utilities tailored for macOS
+)
+
+# Arch Linux-specific software packages
+archlinux_packages=(
+    "github-cli"    # GitHub CLI
+    "iproute2"      # Networking utilities for Linux
+    "base-devel"    # Base development tools
+    "man-db"        # Database-driven manual page viewer
+    "man-pages"     # Standard Unix/Linux manual pages
+)
+
+
 
 # Function to install packages using Homebrew
 install_brew_packages() {
@@ -47,15 +64,13 @@ install_pacman_packages() {
 # Check the operating system
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	# macOS: Installation using Homebrew
-	install_brew_packages ${common_packages[@]}
-	# GUI (specific to macOS)
-  brew install gh zellij
+	install_brew_packages ${common_packages[@]}  ${macos_packages[@]}
+  # GPU-accelerated terminal emulator
 	brew install --cask alacritty
   brew autoremove
 elif [[ -f "/etc/arch-release" ]]; then
 	# Arch Linux: Installation using Pacman
-	install_pacman_packages ${common_packages[@]}
-  sudo pacman -Syu github-cli base-devel man-db man-pages
+	install_pacman_packages ${common_packages[@]} ${archlinux_packages[@]}
 else
 	# Unsupported Operating System
 	echo "Error: Unsupported operating system."
