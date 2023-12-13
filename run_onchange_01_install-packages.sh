@@ -19,7 +19,7 @@ common_packages=(
 
     # Development Tools
     "neovim"        # Hyperextensible Vim-based text editor
-    "rust"
+    "rust-init"
 
     # System and Performance Monitoring
     "bottom"        # Graphical process/system monitor with a customizable interface
@@ -37,12 +37,14 @@ common_packages=(
 
 # macOS-specific software packages
 macos_packages=(
+    "rustup-init"
     "gh"            # GitHub CLI
     "iproute2mac"   # Networking utilities tailored for macOS
 )
 
 # Arch Linux-specific software packages
 archlinux_packages=(
+    "rustup"
     "github-cli"    # GitHub CLI
     "iproute2"      # Networking utilities for Linux
     "base-devel"    # Base development tools

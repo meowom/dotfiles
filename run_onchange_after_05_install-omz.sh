@@ -36,3 +36,12 @@ if [ ! -d "$ZSH_AUTOSUGGESTIONS_DIR" ]; then
 else
     echo "zsh-autosuggestions already installed."
 fi
+
+# Install zsh-syntax-highlighting
+ZSH_SYNTAX_HIGHLIGHTING_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+if [ ! -d "$ZSH_SYNTAX_HIGHLIGHTING_DIR" ]; then
+    echo "Installing zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_SYNTAX_HIGHLIGHTING_DIR"
+else
+    echo "zsh-syntax-highlighting already installed."
+fi
