@@ -14,11 +14,12 @@ common_packages=(
     "fd"            # Simple, fast and user-friendly alternative to 'find'
     "ripgrep"       # Recursively searches directories for a regex pattern
     "fzf"           # General-purpose command-line fuzzy finder
-    "lsd"           # The next gen ls command with a lot of pretty colors and awesome icons
+#    "lsd"           # The next gen ls command with a lot of pretty colors and awesome icons
     "bat"           # A cat clone with syntax highlighting and Git integration
 
-    # Text Editors
+    # Development Tools
     "neovim"        # Hyperextensible Vim-based text editor
+    "rust"
 
     # System and Performance Monitoring
     "bottom"        # Graphical process/system monitor with a customizable interface
