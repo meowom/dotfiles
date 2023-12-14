@@ -19,12 +19,10 @@ common_packages=(
 
     # Development Tools
     "neovim"        # Hyperextensible Vim-based text editor
-    "rust-init"
 
     # System and Performance Monitoring
     "bottom"        # Graphical process/system monitor with a customizable interface
     "neofetch"      # Fast, highly customizable system info script
-    "procs"         # A modern replacement for ps written in Rust
 
     # Terminal Productivity and Utilities
     "tealdeer"      # Very fast implementation of 'tldr' (simplified, community-driven man pages)
