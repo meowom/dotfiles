@@ -1,6 +1,32 @@
 layout {
-    pane
-    pane size=2 borderless=true {
-        plugin location="zellij:compact-bar"
+    default_tab_template {
+    children
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+    }
+    swap_tiled_layout name="h2v" {
+        tab max_panes=3 {
+            pane split_direction="vertical" {
+                pane
+                pane
+            }
+        }
+        tab {
+            pane split_direction="vertical" {
+                pane
+                pane split_direction="horizontal" {
+                    pane
+                    pane
+                }
+            }
+        }
+        tab {
+            pane
+            pane
+            pane
+            pane
+        }
     }
 }
+
