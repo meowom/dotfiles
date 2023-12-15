@@ -36,6 +36,7 @@ common_packages=(
 # macOS-specific software packages
 macos_packages=(
     "gh"            # GitHub CLI
+    "ffmpeg"
     "iproute2mac"   # Networking utilities tailored for macOS
 )
 
