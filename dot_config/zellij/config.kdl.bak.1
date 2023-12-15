@@ -3,16 +3,13 @@ keybinds {
     shared {
 
         bind "Alt n" { NewPane; }
-        bind "Alt h" { MoveFocusOrTab "Left"; }
-        bind "Alt l" { MoveFocusOrTab "Right"; }
-        bind "Alt j" { MoveFocus "Down"; }
-        bind "Alt k" { MoveFocus "Up"; }
-        bind "Alt o" { ToggleFocusFullscreen; }
+        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
         bind "" { ToggleFloatingPanes; }
-        bind "Alt Up" { HalfPageScrollUp; }
-        bind "Alt Down" { HalfPageScrollDown; }
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
+        bind "Alt [" { HalfPageScrollUp; }
+        bind "Alt ]" { HalfPageScrollDown; }
 
         bind "Alt /" {
             LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
@@ -22,7 +19,6 @@ keybinds {
                 "Shared: move focus or tab right"  "Alt l"
                 "Shared: move focus down"          "Alt j"
                 "Shared: move focus up"            "Alt k"
-                "Shared: toggle focus full screen"    "Alt o"
                 "Shared: toggle floating panes"    "Ctrl /"
                 "Shared: halfpages scroll up"      "Alt ["
                 "Shared: halfpages scroll down"    "Alt ]"
@@ -106,12 +102,8 @@ keybinds {
         }
     }
     shared_except "locked" {
-        bind "Ctrl g" "Esc" { SwitchToMode "Locked"; }
+        bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
-    }
-
-    shared_except "normal" "locked" {
-        bind "Enter" { SwitchToMode "Normal"; }
     }
 }
 

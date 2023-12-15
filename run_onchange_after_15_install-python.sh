@@ -1,17 +1,12 @@
 #!/bin/zsh
-# Check if Pyenv is already installed
-if command -v pyenv >/dev/null 2>&1; then
-  echo "Pyenv is already installed. Skipping installation."
-  exit 0
-fi
 # Check the operating system
-echo "Installing Pyenv..."
+echo "Install Python..."
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # macOS
-  brew install pyenv
+  brew install python poetry
 elif [[ -f "/etc/arch-release" ]]; then
   # Arch Linux
-  sudo pacman -S pyenv
+  sudo pacman -S python-poetry
 else
   echo "Error: Unsupported operating system."
   exit 1
@@ -19,7 +14,4 @@ fi
 
 source ~/.zshrc
 
-echo "Installing Python..."
-pyenv install 3.9.6  # Replace with your desired Python version
-pyenv global 3.9.6    # Set the installed Python version as the global default
-echo "Pyenv and Python installation completed!"
+echo "Python installation completed!"

@@ -65,7 +65,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	# macOS: Installation using Homebrew
 	install_brew_packages ${common_packages[@]}  ${macos_packages[@]}
   # GPU-accelerated terminal emulator
-	brew install --cask alacritty
+	brew install --cask alacritty neovide
   brew autoremove
 elif [[ -f "/etc/arch-release" ]]; then
 	# Arch Linux: Installation using Pacman
