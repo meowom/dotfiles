@@ -3,29 +3,30 @@ keybinds {
     shared {
 
         bind "Alt n" { NewPane; }
-        bind "Alt h" { MoveFocusOrTab "Left"; }
-        bind "Alt l" { MoveFocusOrTab "Right"; }
-        bind "Alt j" { MoveFocus "Down"; }
-        bind "Alt k" { MoveFocus "Up"; }
-        bind "Alt o" { ToggleFocusFullscreen; }
-        bind "" { ToggleFloatingPanes; }
-        bind "Alt Up" { HalfPageScrollUp; }
-        bind "Alt Down" { HalfPageScrollDown; }
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
+        bind "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt Down" { MoveFocus "Down"; }
+        bind "Alt Up" { MoveFocus "Up"; }
+        bind "Alt m" { ToggleFocusFullscreen; }
+        bind "Alt ;" { ToggleFloatingPanes; }
+        bind "Alt '" { TogglePaneEmbedOrFloating; }
+        bind "PageUp" { HalfPageScrollUp; }
+        bind "PageDown" { HalfPageScrollDown; }
+//        bind "Alt [" { PreviousSwapLayout; }
+//        bind "Alt ]" { NextSwapLayout; }
 
-        bind "Alt /" {
+        bind "Alt \\" {
             LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
 //              Shared
                 "Shared: create new pane"          "Alt n"
-                "Shared: move focus or tab left"   "Alt h"
-                "Shared: move focus or tab right"  "Alt l"
-                "Shared: move focus down"          "Alt j"
-                "Shared: move focus up"            "Alt k"
-                "Shared: toggle focus full screen"    "Alt o"
-                "Shared: toggle floating panes"    "Ctrl /"
-                "Shared: halfpages scroll up"      "Alt ["
-                "Shared: halfpages scroll down"    "Alt ]"
+                "Shared: move focus or tab left"   "Alt left"
+                "Shared: move focus or tab right"  "Alt right"
+                "Shared: move focus down"          "Alt down"
+                "Shared: move focus up"            "Alt up"
+                "Shared: toggle focus full screen"    "Alt m"
+                "Shared: toggle floating panes"    "Alt ;"
+                "Shared: halfpages scroll up"      "PageUp"
+                "Shared: halfpages scroll down"    "PageDown"
 
 //              Move mode
                 "switch to Move mode"        "Ctrl h"
