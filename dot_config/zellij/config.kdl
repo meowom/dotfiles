@@ -2,7 +2,7 @@
 keybinds {
     shared {
 
-        bind "Alt n" { NewPane; }
+        bind "Alt c" { NewPane; }
         bind "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt Down" { MoveFocus "Down"; }
@@ -18,7 +18,7 @@ keybinds {
         bind "Alt \\" {
             LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
 //              Shared
-                "Shared: create new pane"          "Alt n"
+                "Shared: create new pane"          "Alt c"
                 "Shared: move focus or tab left"   "Alt left"
                 "Shared: move focus or tab right"  "Alt right"
                 "Shared: move focus down"          "Alt down"
@@ -121,14 +121,7 @@ keybinds {
 
 theme "tokyo-night-light"
 
-
-// Choose the mode that zellij uses when starting up.
-// Default: normal
-//
 default_mode "locked"
+session_serialization true
 
-// Enable or disable the rendering of styled and colored underlines (undercurl).
-// May need to be disabled for certain unsupported terminals
-// Default: true
-//
-// styled_underlines false
+
