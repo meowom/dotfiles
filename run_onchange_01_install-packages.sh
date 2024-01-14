@@ -47,6 +47,7 @@ archlinux_packages=(
     "base-devel"    # Base development tools
     "man-db"        # Database-driven manual page viewer
     "man-pages"     # Standard Unix/Linux manual pages
+    "unzip"
 )
 
 
