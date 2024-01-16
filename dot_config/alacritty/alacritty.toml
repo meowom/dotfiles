@@ -1,0 +1,13 @@
+[font]
+size = 18.0
+
+[font.normal]
+family = "Hack Nerd Font"
+
+[[keyboard.bindings]]
+chars = "\u001F"
+key = "Slash"
+mods = "Control"
+
+[window]
+option_as_alt = "Both"
