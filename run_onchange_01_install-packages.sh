@@ -38,6 +38,7 @@ macos_packages=(
     "gh"            # GitHub CLI
     "ffmpeg"
     "iproute2mac"   # Networking utilities tailored for macOS
+    "ansible"
 )
 
 # Arch Linux-specific software packages
