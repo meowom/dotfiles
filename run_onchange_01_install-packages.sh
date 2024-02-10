@@ -69,6 +69,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	install_brew_packages ${common_packages[@]}  ${macos_packages[@]}
   # GPU-accelerated terminal emulator
 	brew install --cask alacritty neovide anki
+  brew tap hashicorp/tap
+  brew install hashicorp/tap/hashicorp-vagrant
   brew autoremove
 elif [[ -f "/etc/arch-release" ]]; then
 	# Arch Linux: Installation using Pacman
